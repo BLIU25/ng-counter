@@ -1,3 +1,4 @@
 <p>counter works!</p>
-<button data-test="plusBtn" (click)="increase()">+</button>
+<button data-test="plusBtn" *ngIf="isLargeThanTen()" (click)="increase()">+</button>
 <span data-test="displayCount">number: {{count}}</span>
+<button data-test="minusBtn" *ngIf="isLargeOrEqualThanZero()" (click)="decrease()">-</button>
