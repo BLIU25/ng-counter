@@ -23,7 +23,7 @@ describe('CounterComponent', () => {
 
   it('should add 1 when click plus buttion', () => {
     //given
-    component.count = 0;
+    component.counter.count = 0;
     const plusBtn = fixture.nativeElement.querySelector('[data-test="plusBtn"]');
     //when
     plusBtn.click();
@@ -35,7 +35,7 @@ describe('CounterComponent', () => {
 
   it('should reduce 1 when click minus buttion', () => {
     //given
-    component.count = 0;
+    component.counter.count = 0;
     const minusBtn = fixture.nativeElement.querySelector('[data-test="minusBtn"]');
     //when
     minusBtn.click();
@@ -47,7 +47,7 @@ describe('CounterComponent', () => {
 
   it('should minus btn disappear when count number less than 0', () => {
     //given
-    component.count = -1;
+    component.counter.count = -1;
     //when
     fixture.detectChanges();
     //then
@@ -57,7 +57,7 @@ describe('CounterComponent', () => {
 
   it('should plus btn disappear when count number greater than 10', () => {
     //given
-    component.count = 11;
+    component.counter.count = 11;
     //when
     fixture.detectChanges();
     //then
@@ -67,35 +67,35 @@ describe('CounterComponent', () => {
 
   it('should return fasle when count number less than 0', () => {
     //given
-    component.count = -1;
+    component.counter.count = -1;
     //when
     expect(component.isLargeOrEqualThanZero()).toBeFalse();
   });
   
   it('should return true when count number not less than 0', () => {
     //given
-    component.count = 1;
+    component.counter.count = 1;
     //when
     expect(component.isLargeOrEqualThanZero()).toBeTrue();
   });
 
   it('should return fasle when count number less than 10', () => {
     //given
-    component.count = 11;
+    component.counter.count = 11;
     //when
     expect(component.isLessOrEqualThanTen()).toBeFalse();
   });
 
   it('should return true when count number not less than 10', () => {
     //given
-    component.count = 1;
+    component.counter.count = 1;
     //when
     expect(component.isLessOrEqualThanTen()).toBeTrue();
   });
 
   it('should rest to 0 when click rest buttion', () => {
     //given
-    component.count = 11;
+    component.counter.count = 11;
     const restBtn = fixture.nativeElement.querySelector('[data-test="restBtn"]');
     //when
     restBtn.click();

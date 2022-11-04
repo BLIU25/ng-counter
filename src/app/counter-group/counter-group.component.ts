@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CounterComponent } from '../counter/counter.component';
+import { Counter } from '../models/counter.model';
 
 @Component({
   selector: 'app-counter-group',
@@ -6,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./counter-group.component.scss']
 })
 export class CounterGroupComponent implements OnInit {
-  counters: number[] = [];
+
+  counters: Counter[] = [];
 
   constructor() { }
 
@@ -14,6 +17,14 @@ export class CounterGroupComponent implements OnInit {
   }
 
   doCreateCounter(): void  {
-    this.counters.push(0);
+    this.counters.push(new Counter(0));
+  }
+
+  sumCounts(): number {
+    let total = 0;
+    this.counters.forEach(counter => {
+      total += counter.count
+    })
+   return total;
   }
 }

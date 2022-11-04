@@ -1,3 +1,4 @@
 <p></p>
 <button (click)="doCreateCounter()">create counter</button>
-<app-counter *ngFor="let counter of counters"></app-counter>
+<app-counter *ngFor="let item of counters" [counter]="item"></app-counter>
+<div>Sum: {{sumCounts()}}</div>
