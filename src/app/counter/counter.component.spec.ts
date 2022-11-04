@@ -93,4 +93,16 @@ describe('CounterComponent', () => {
     expect(component.isLessOrEqualThanTen()).toBeTrue();
   });
 
+  it('should rest to 0 when click rest buttion', () => {
+    //given
+    component.count = 11;
+    const restBtn = fixture.nativeElement.querySelector('[data-test="restBtn"]');
+    //when
+    restBtn.click();
+    fixture.detectChanges();
+    //then
+    const displayCount = fixture.nativeElement.querySelector('[data-test="displayCount"]');
+    expect(displayCount.textContent).toEqual('number: 0');
+  });
+
 });

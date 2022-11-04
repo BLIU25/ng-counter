@@ -3,3 +3,4 @@
 <span data-test="displayCount" [ngClass]="{'green': !isLargeOrEqualThanZero() }"
   [ngClass]="{'red': !isLessOrEqualThanTen()}">number: {{count}}</span>
 <button data-test="minusBtn" *ngIf="isLargeOrEqualThanZero()" (click)="decrease()">-</button>
+<button data-test="restBtn" (click)="rest()">Rest</button>

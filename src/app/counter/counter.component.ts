@@ -19,6 +19,10 @@ export class CounterComponent implements OnInit {
   decrease(): void{
     this.count = this.count - 1;
   }
+  
+  rest(): void{
+    this.count = 0;
+  }
 
   isLargeOrEqualThanZero(): boolean {
     return this.count >= 0;
